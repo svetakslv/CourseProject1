@@ -12,7 +12,22 @@ public class Main {
         employees[7] = new Employee("Блок Александр Александрович", 2, 53_340.37f,8);
         employees[8] = new Employee("Цветаева Марина Ивановна", 1, 44_900.12f,9);
         employees[9] = new Employee("Полонская Вероника Витольдовна", 5, 63_600.10f,10);
+
+        System.out.println(employees[0]);
+        System.out.println(employees[1]);
+        System.out.println(employees[2]);
+        System.out.println(employees[3]);
+        System.out.println(employees[4]);
+        System.out.println(employees[5]);
+        System.out.println(employees[6]);
+        System.out.println(employees[7]);
+        System.out.println(employees[8]);
+        System.out.println(employees[9]);
+
+
     }
+
+
 
 
 
