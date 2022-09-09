@@ -5,7 +5,7 @@ public class Employee {
     private int numDepartment;
     private float salary;
     private static int counter = 0;
-    private int id = ++counter;
+    private int id;
 
     
     public String getFullName() {
@@ -20,10 +20,6 @@ public class Employee {
         return salary;
     }
 
-    public static int getCounter() {
-        return counter;
-    }
-
     public int getId() {
         return id;
     }
@@ -36,10 +32,12 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Employee(String fullName, int numDepartment, float salary, int counter) {
+    public Employee(String fullName, int numDepartment, float salary) {
         this.fullName = fullName;
         this.numDepartment = numDepartment;
         this.salary = salary;
+        this.id = counter;
+        counter++;
     }
 
     @Override
