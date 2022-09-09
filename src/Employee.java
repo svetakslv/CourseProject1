@@ -1,9 +1,9 @@
 import java.util.Objects;
 
 public class Employee {
-    private String fullName;
+    private final String fullName;
     private int numDepartment;
-    public float salary;
+    private float salary;
     private static int counter = 0;
     private int id = ++counter;
 
@@ -40,7 +40,6 @@ public class Employee {
         this.fullName = fullName;
         this.numDepartment = numDepartment;
         this.salary = salary;
-        this.id = ++counter;
     }
 
     @Override

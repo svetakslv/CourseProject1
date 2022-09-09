@@ -2,7 +2,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Employee[] employees = new Employee[10];
         employees[0] = new Employee("Булгаков Михаил Афанасьевич", 3, 57_780.73f, Employee.getCounter());
         employees[1] = new Employee("Чехов Антон Павлович", 1, 45_530.21f, Employee.getCounter());
         employees[2] = new Employee("Ахматова Анна Андреевна", 2, 53_420.46f, Employee.getCounter());
@@ -18,6 +17,7 @@ public class Main {
             System.out.println(e);
         }
     }
+    private static Employee[] employees = new Employee[10];
 }
 
 
