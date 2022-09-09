@@ -3,9 +3,9 @@ import java.util.Objects;
 public class Employee {
     private String fullName;
     private int numDepartment;
-    private float salary;
-    private static int counter;
-    private int id = counter++;
+    public float salary;
+    private static int counter = 0;
+    private int id = ++counter;
 
 
     public String getFullName() {
@@ -39,7 +39,7 @@ public class Employee {
         this.fullName = fullName;
         this.numDepartment = numDepartment;
         this.salary = salary;
-        this.id = counter;
+        this.id = ++counter;
     }
 
     @Override
