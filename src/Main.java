@@ -14,19 +14,28 @@ public class Main {
         employees[8] = new Employee("Цветаева Марина Ивановна", 1, 44_900.12f, Employee.getCounter());
         employees[9] = new Employee("Полонская Вероника Витольдовна", 5, 63_600.10f, Employee.getCounter());
 
-        System.out.println(employees[0]);
-        System.out.println(employees[1]);
-        System.out.println(employees[2]);
-        System.out.println(employees[3]);
-        System.out.println(employees[4]);
-        System.out.println(employees[5]);
-        System.out.println(employees[6]);
-        System.out.println(employees[7]);
-        System.out.println(employees[8]);
-        System.out.println(employees[9]);
+
+        for (Employee e : employees) {
+            System.out.println(e);
+        }
+
+
+        int[] arr = generateRandomArray();
+        int sum = 0;
+        for (int k : arr) {
+            sum += k;
+        }
+        System.out.println("Сумма трат за месяц составила " + sum + " рублей.");
 
     }
 
+    public static int[] generateRandomArray() {
+        int[] array = new int[30];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = Employee.setSalary();
+        }
+        return array;
+    }
 }
 
 

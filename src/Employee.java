@@ -35,6 +35,7 @@ public class Employee {
     public void setSalary(float salary) {
         this.salary = salary;
     }
+
     public Employee(String fullName, int numDepartment, float salary, int counter) {
         this.fullName = fullName;
         this.numDepartment = numDepartment;
