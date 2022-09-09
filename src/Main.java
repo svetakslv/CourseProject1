@@ -23,8 +23,8 @@ public class Main {
         float sum = 0;
         for (int i = 0; i < employees.length; i++) {
             sum = sum + employees[i].getSalary();
-            System.out.println("Сумма затрат на зарплаты в месяц " + sum + " рублей.");
         }
+        System.out.println("Сумма затрат на зарплаты в месяц " + sum + " рублей.");
         return sum;
     }
 
@@ -33,8 +33,8 @@ public class Main {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() < min) ;
             min = employees[i].getSalary();
-            System.out.println("Сотрудник с минимальной зарплатой" + min);
         }
+        System.out.println("Сотрудник с минимальной зарплатой" + min);
         return min;
     }
 
@@ -43,8 +43,8 @@ public class Main {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() < max) ;
             max = employees[i].getSalary();
-            System.out.println("Сотрудник с максимальной зарплатой" + max);
         }
+        System.out.println("Сотрудник с максимальной зарплатой" + max);
         return max;
     }
 
@@ -52,8 +52,8 @@ public class Main {
         float average = 0;
         for (int i = 0; i < employees.length; i++) {
             average = average + employees[i].getSalary() / 10;
-            System.out.println("Сумма затрат на зарплаты в месяц " + average + " рублей.");
         }
+        System.out.println("Сумма затрат на зарплаты в месяц " + average + " рублей.");
         return average;
     }
 
@@ -61,8 +61,8 @@ public class Main {
         int count = 0;
         for (int i = 0; i < employees.length; i++) {
             count = Integer.parseInt(count + employees[i].getFullName());
-            System.out.println("Список сотрудников: " + count);
         }
+        System.out.println("Список сотрудников: " + count);
         return count;
     }
 }
