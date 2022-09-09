@@ -22,7 +22,7 @@ public class Main {
     private static float getSumSalaryOfMonth() {
         float sum = 0;
         for (int i = 0; i < employees.length; i++) {
-            sum = sum + employees[i].getSalary() ;
+            sum = sum + employees[i].getSalary();
             System.out.println("Сумма затрат на зарплаты в месяц " + sum + " рублей.");
         }
         return sum;
