@@ -31,20 +31,22 @@ public class Main {
     private static float getMinimumSalary() {
         float min = 44_900.12f;
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() < min) ;
-            min = employees[i].getSalary();
+            if (employees[i].getSalary() < min) {
+                min = employees[i].getSalary();
+            }
+            System.out.println("Сотрудник с минимальной зарплатой " + min);
         }
-        System.out.println("Сотрудник с минимальной зарплатой" + min);
         return min;
     }
 
     private static float getMaximumSalary() {
         float max = 63_600.10f;
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() < max) ;
-            max = employees[i].getSalary();
+            if (employees[i].getSalary() < max) {
+                max = employees[i].getSalary();
+            }
+            System.out.println("Сотрудник с максимальной зарплатой " + max);
         }
-        System.out.println("Сотрудник с максимальной зарплатой" + max);
         return max;
     }
 
@@ -56,15 +58,14 @@ public class Main {
         System.out.println("Сумма затрат на зарплаты в месяц " + average + " рублей.");
         return average;
     }
-
-    private static float getFullNameEmployees() {
-        int count = 0;
-        for (int i = 0; i < employees.length; i++) {
-            count = Integer.parseInt(count + employees[i].getFullName());
+            private static float getFullNameEmployees () {
+                int count = 0;
+                for (int i = 0; i < employees.length; i++) {
+                    count = Integer.parseInt(count + employees[i].getFullName());
+                }
+                System.out.println("Список сотрудников: " + count);
+                return count;
+            }
         }
-        System.out.println("Список сотрудников: " + count);
-        return count;
-    }
-}
 
 
