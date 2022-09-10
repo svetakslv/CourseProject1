@@ -14,56 +14,82 @@ public class Main {
         employees[8] = new Employee("Цветаева Марина Ивановна", 1, 44_900.12f);
         employees[9] = new Employee("Полонская Вероника Витольдовна", 5, 63_600.10f);
 
-        for (Employee e : employees) {
-            System.out.println(e);
+        printNameAllEmployees();
+            System.out.println("Сумма затрат на зарплаты в месяц " + getSumSalaryOfMonth() + " рублей.");
+            System.out.println("Сотрудник с минимальной зарплатой " + getMinimumSalary());
+            System.out.println("Сотрудник с максимальной зарплатой " + getMaximumSalary());
+            System.out.println("Среднее значение зарплат в месяц " + getAverageSalary());
+            System.out.println("Список сотрудников: " + getFullNameEmployees());
+
+        }
+    public static void printNameAllEmployees() {
+        for (Employee employee : employees) {
+            System.out.println(employee);
         }
     }
 
     private static float getSumSalaryOfMonth() {
         float sum = 0;
-        for (int i = 0; i < employees.length; i++) {
-            sum = sum + employees[i].getSalary();
+        for (Employee employee : employees) {
+            sum = sum + employee.getSalary();
         }
-        System.out.println("Сумма затрат на зарплаты в месяц " + sum + " рублей.");
         return sum;
     }
 
     private static float getMinimumSalary() {
-        float min = 44_900.12f;
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() < min) {
-                min = employees[i].getSalary();
+        float min = 0;
+        float index = 0;
+        for (Employee value : employees) {
+            if (value != null) {
+                min = value.getSalary();
+                index = 1;
+                break;
             }
-            System.out.println("Сотрудник с минимальной зарплатой " + min);
+        }
+        Employee employeeMinimumSalary = null;
+        for (Employee employee : employees) {
+            if (employee == null) continue;
+            if (employee.getSalary() < min) {
+                min = employee.getSalary();
+                employeeMinimumSalary = employee;
+            }
         }
         return min;
     }
 
     private static float getMaximumSalary() {
-        float max = 63_600.10f;
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() < max) {
-                max = employees[i].getSalary();
+        float max = 0;
+        float index = 0;
+        for (Employee value : employees) {
+            if (value != null) {
+                max = value.getSalary();
+                index = 1;
+                break;
             }
-            System.out.println("Сотрудник с максимальной зарплатой " + max);
+        }
+        Employee employeeMaximumSalary = null;
+        for (Employee employee : employees) {
+            if (employee != null) ;
+            if (employee.getSalary() > max) {
+                max = employee.getSalary();
+                employeeMaximumSalary = employee;
+            }
         }
         return max;
     }
 
     private static float getAverageSalary() {
         float average = 0;
-        for (int i = 0; i < employees.length; i++) {
-            average = average + employees[i].getSalary() / 10;
+        for (Employee employee : employees) {
+            average = average + employee.getSalary() / 10;
         }
-        System.out.println("Сумма затрат на зарплаты в месяц " + average + " рублей.");
         return average;
     }
-            private static float getFullNameEmployees () {
-                int count = 0;
-                for (int i = 0; i < employees.length; i++) {
-                    count = Integer.parseInt(count + employees[i].getFullName());
+            private static String getFullNameEmployees () {
+                String count = String.valueOf(0);
+                for (Employee employee : employees) {
+                    count = count + employee.getFullName();
                 }
-                System.out.println("Список сотрудников: " + count);
                 return count;
             }
         }
