@@ -88,7 +88,7 @@ public class Main {
             private static String getFullNameEmployees () {
                 String count = String.valueOf(0);
                 for (Employee employee : employees) {
-                    count = count + employee.getFullName();
+                    count = count + employee.getFullName() + " ";
                 }
                 return count;
             }
