@@ -1,18 +1,66 @@
+import java.util.Objects;
+
 public class Employee {
-    private String fullName;
+    private final String fullName;
     private int numDepartment;
     private float salary;
-    private static int counter;
+    private static int counter = 1;
     private int id;
 
-public Employee(String fullName, int numDepartment, float salary, int counter, int id) {
-    this.fullName = fullName;
-    this.numDepartment = numDepartment;
-    this.salary = salary;
-    this.id = id;
+    
+    public String getFullName() {
+        return fullName;
+    }
+
+    public int getNumDepartment() {
+        return numDepartment;
+    }
+
+    public float getSalary() {
+        return salary;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setNumDepartment(int numDepartment) {
+        this.numDepartment = numDepartment;
+    }
+
+    public void setSalary(float salary) {
+        this.salary = salary;
+    }
+
+    public Employee(String fullName, int numDepartment, float salary) {
+        this.fullName = fullName;
+        this.numDepartment = numDepartment;
+        this.salary = salary;
+        this.id = counter;
+        counter++;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee)) return false;
+        Employee employee = (Employee) o;
+        return numDepartment == employee.numDepartment && Float.compare(employee.salary, salary) == 0 && id == employee.id && Objects.equals(fullName, employee.fullName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName, numDepartment, salary, id);
+    }
+
+    @Override
+    public String toString() {
+        return "Сотрудник " +
+                "Ф.И.О.: " + fullName +
+                ", номер отдела: " + numDepartment +
+                ", заработная плата: " + salary +
+                ", id=" + id;
+    }
 
 }
 
-
-
-}
